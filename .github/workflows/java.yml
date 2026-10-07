@@ -15,15 +15,15 @@ jobs:
           java-version: '17'
        # CI
       - name: Compile
-        run: javac Welcome.java
+        run: javac Test.java
       - name: Run
-        run: java Welcome
+        run: java Test
         # CD
       - name: Create JAR
-        run: jar --create --file Welcome.jar Welcome.class
+        run: jar --create --file Test.jar Test.class
 
       - name: Deliver application
         uses: actions/upload-artifact@v4
         with:
-          name: Welcome-App
-          path: Welcome.jar
+          name: Test-App
+          path: Test.jar
